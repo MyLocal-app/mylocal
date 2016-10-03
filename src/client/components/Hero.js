@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../containers/SearchBar';
+import SearchLanding from '../containers/SearchLanding';
 
 export default class Hero extends React.Component {
 
@@ -9,7 +9,7 @@ export default class Hero extends React.Component {
         <div className="main-bg-text">
           <h1 className="main-bg-text-hero">We Find</h1>
           <h1 className="main-bg-text-hero-blue">You Choose</h1>
-          <SearchBar />
+          <SearchLanding />
           <div className="divider"></div>
         </div>
       </div>

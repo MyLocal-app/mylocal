@@ -21,9 +21,7 @@ class SearchBar extends React.Component {
   }
 
   onFormSubmit(event) {
-    // Tells the browser not to refresh page
     event.preventDefault();
-    console.log('message', this.state.term, this.state.type);
     this.props.submitQueryAndType(this.state.term, this.state.type);
     browserHistory.push('/search');
   }

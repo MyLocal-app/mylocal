@@ -16,7 +16,6 @@ class SearchLocation extends React.Component {
   }
 
   onInputChange(event) {
-    console.log('im in onInputChange', event.address_components, event.formatted_address);
     this.setState({
       location: event.formatted_address,
       zip: event.address_components[7].short_name

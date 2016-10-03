@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchLocation from '../containers/SearchLocation';
+import SearchLocationBar from '../containers/SearchLocationBar';
 
-export default class Location extends React.Component {
+export default class SearchLocation extends React.Component {
 
   render() {
     return (
@@ -10,7 +10,7 @@ export default class Location extends React.Component {
           <h1 className="main-text">Where do you want to find it?</h1>
           <hr className="hr" />
           <div className="divider"></div>
-          <SearchLocation />
+          <SearchLocationBar />
           <div className="divider"></div>
         </div>
       </div>

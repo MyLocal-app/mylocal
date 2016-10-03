@@ -17,7 +17,6 @@ export function signinUser({ email, password }) {
     axios.post('/signin', {email, password})
     .then(response =>{
       //update state - dispatch action by redux-thunk
-
       dispatch({ type: AUTH_USER, payload: 'welcome back!' });
       // send user to / and update the history stack
       browserHistory.push('/');
