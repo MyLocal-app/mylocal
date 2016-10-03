@@ -1,9 +1,9 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import { submitQueryAndType } from '../actions/searchActions'
+import { submitQueryAndType } from '../actions'
 import { connect } from 'react-redux'
 
-class SearchBar extends React.Component {
+class SearchLanding extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,11 +13,11 @@ class SearchBar extends React.Component {
   }
 
   onInputChange(event) {
-    this.setState({term: event.target.value});
+    this.setState({ term: event.target.value });
   }
 
   onTypeChange(event) {
-    this.setState({type: event.target.value});
+    this.setState({ type: event.target.value });
   }
 
   onFormSubmit(event) {
@@ -28,12 +28,12 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit.bind(this)}>
+      <form onSubmit={ this.onFormSubmit.bind(this) }>
         <input placeholder="Search" className="inputBox" required
-          value={this.state.term}
-          onChange={(this.onInputChange).bind(this)}
+          value={ this.state.term }
+          onChange={ (this.onInputChange).bind(this) }
         />
-        <select className="typeSelect" defaultValue="" onChange={(this.onTypeChange).bind(this)} required>
+        <select className="typeSelect" defaultValue="" onChange={ (this.onTypeChange).bind(this) } required>
           <option disabled value="">- Type -</option>
           <option value="restaurant">Restaurants</option>
           <option value="events">Events</option>
@@ -45,4 +45,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default connect (null, { submitQueryAndType })(SearchBar);
+export default connect (null, { submitQueryAndType })(SearchLanding);

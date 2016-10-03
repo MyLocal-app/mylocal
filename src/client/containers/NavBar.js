@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
  class NavBar extends Component {
 
   isAuthenticated() {
-    if (!this.props.authenticated) {
+    if (!this.props.auth.authenticated) {
       return [
         <li className="nav-item" key={ 1 }>
           <Link to="/signin" className="nav-item nav-link active">Sign in</Link>
@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
     } else {
       return [
          <li className="nav-item" key={ 1 }>
-          <Link to="/" className="nav-item nav-link active">{this.props.name}</Link>
+          <Link to="/" className="nav-item nav-link active">{ this.props.auth.name }</Link>
         </li>,
         <li className="nav-item" key= { 2 } >
           <Link to="/signout" className="nav-item nav-link active">Sign Out</Link>
@@ -43,7 +43,7 @@ import { connect } from 'react-redux';
                   <Link className="navbar-brand" to="/"><img src="img/logo.svg" style={{ 'width': '80px' }}/></Link>
                 </li>
               </ul>
-              <ul className="nav navbar-nav pull-sm-right" style={{ 'marginTop': '13px'}}>
+              <ul className="nav navbar-nav pull-sm-right" style={{ 'marginTop': '13px' }}>
                 <li className="nav-item">
                   <Link className="nav-item nav-link active" to="/">Home</Link>
                 </li>
@@ -57,12 +57,8 @@ import { connect } from 'react-redux';
   }
 }
 
-function mapStateToProps(state){
-  return {
-    authenticated : state.auth.authenticated,
-    name: state.auth.name
-  };
+function mapStateToProps({ auth }){
+  return { auth };
 }
 
 export default connect(mapStateToProps)(NavBar);
-

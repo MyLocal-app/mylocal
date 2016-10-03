@@ -1,21 +1,21 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-const ROOT_URL = '/search/restaurants';
 
-export const SEARCH_YELP = 'SEARCH_YELP';
+
+
 
 export function searchYelp (location) {
+  const YELP_URL = '/search/restaurants';
   return function(dispatch) {
-
     dispatch({
       type: SEARCH_YELP,
       payload: []
     });
     browserHistory.push('/search/restaurants');
-    const url = `${ROOT_URL}?location=${location}&term=restaurant`;
+    const url = `${ YELP_URL }?location=${ location }&term=restaurant`;
     const request = axios.get(url)
-    .then(response =>{
+    .then(response => {
       dispatch({
         type: SEARCH_YELP,
         payload: response.data.businesses

@@ -22,13 +22,10 @@ class Signup extends React.Component {
 
 
   render() {
-
     // Form properties
     const { handleSubmit, fields: {firstName, lastName, email, password, address} } = this.props;
-
     // note latest redux form gives warning message on spread operator, but still works
     // rolled back to redux 5.33, since 6.05 uses a different format.
-
     return (
       <div className="main-banner" style={{ 'textAlign': 'center' }}>
         <div className="col-md-4 offset-md-4 col-sm-8 offset-sm-2" style={{ 'marginTop': '200px' }}>

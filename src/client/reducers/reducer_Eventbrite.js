@@ -1,4 +1,4 @@
-import { SEARCH_EVENTBRITE } from '../actions/EventbriteSearchAction'
+import { SEARCH_EVENTBRITE } from '../constants'
 
 export default function(state = [], action) {
 

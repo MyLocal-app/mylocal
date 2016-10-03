@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class YelpResults extends Component {
+class ResultsYelp extends Component {
   render() {
     return (
       <div className="results">
         <h2 className="searchresults-main">Search Results for Restaurants</h2>
         <input placeholder="Filter" className="inputBox filter" />
         <div className="clearfloat"></div>
-        {this.props.YelpResults.length === 0 ? <img className="loading" src="https://i.imgur.com/EATfJf4.gif" /> : '' }
+        { this.props.yelpResults.length === 0 ? <img className="loading" src="https://i.imgur.com/EATfJf4.gif" /> : '' }
         <hr />
-        { this.props.YelpResults.map(function (restaurant) {
+        { this.props.yelpResults.map(function (restaurant) {
           return (
             <div className="result" key={ restaurant.id }>
               <div className="row">
@@ -28,7 +28,7 @@ class YelpResults extends Component {
                   <i className={ `material-icons star-rating ${ Math.round(restaurant.rating) >= 5 ? 'star-on' : '' }` }>star</i>
                   <div style={{"marginTop":"5px"}}></div>
                   <i className="material-icons locationPointer">location_on</i>
-                  { restaurant.location.display_address.join(', ')}
+                  { restaurant.location.display_address.join(', ') }
                   <hr />
                   <h4>Review Snippet</h4>
                   <p className="desc">{ restaurant.snippet_text }</p>
@@ -42,9 +42,8 @@ class YelpResults extends Component {
   }
 }
 
-var mapStateToProps = function(state) {
-  return {
-    YelpResults: state.YelpResults
-  }
-}
-export default connect(mapStateToProps)(YelpResults)
+var mapStateToProps = function({ yelpResults }) {
+  return { yelpResults };
+};
+
+export default connect(mapStateToProps)(ResultsYelp)
