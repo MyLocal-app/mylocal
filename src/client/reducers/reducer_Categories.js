@@ -17,4 +17,4 @@ export default function () {
         image: "img/community-banner.jpg",
       }
     ];
-}
+};

@@ -1,8 +1,8 @@
-import React from 'react';
-import Autocomplete from 'react-google-autocomplete';
+import React         from 'react';
+import Autocomplete  from 'react-google-autocomplete';
 import { reduxForm } from 'redux-form';
-import * as actions from '../actions';
-import { Link } from 'react-router'
+import * as actions  from '../actions';
+import { Link }      from 'react-router'
 
 class Signup extends React.Component {
 
@@ -23,7 +23,7 @@ class Signup extends React.Component {
 
   render() {
     // Form properties
-    const { handleSubmit, fields: {firstName, lastName, email, password, address} } = this.props;
+    const { handleSubmit, fields: { firstName, lastName, email, password, address } } = this.props;
     // note latest redux form gives warning message on spread operator, but still works
     // rolled back to redux 5.33, since 6.05 uses a different format.
     return (
@@ -31,24 +31,24 @@ class Signup extends React.Component {
         <div className="col-md-4 offset-md-4 col-sm-8 offset-sm-2" style={{ 'marginTop': '200px' }}>
           <h3 style={{ 'fontFamily': 'Julius Sans One' }}>Sign Up</h3>
           <hr />
-          <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))} style={{ 'marginTop': '20px' }}>
+          <form onSubmit={ handleSubmit(this.onFormSubmit.bind(this)) } style={{ 'marginTop': '20px' }}>
             <div className="form-group">
-              <input {...firstName} type="text" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="First Name.." required />
+              <input { ...firstName } type="text" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="First Name.." required />
             </div>
             <div className="form-group">
-              <input {...lastName} type="text" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Last Name.." required />
+              <input { ...lastName } type="text" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Last Name.." required />
             </div>
             <div className="form-group">
-              <input {...email} type="email" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Email.." required />
+              <input { ...email } type="email" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Email.." required />
             </div>
             <div className="form-group">
-              <input {...password} type="password" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Password.." required />
+              <input { ...password } type="password" style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Password.." required />
             </div>
             <div className="form-group">
               <Autocomplete
-                {...address}
+                { ...address }
                 style={{ 'border-radius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }}
-                types={['address']}
+                types={ ['address'] }
                 placeholder="Street Address.."
               />
             </div>

@@ -1,8 +1,7 @@
-import React from 'react';
-import SearchLanding from '../containers/SearchLanding';
+import React, { Component } from 'react';
+import SearchLanding        from '../containers/SearchLanding';
 
-export default class Hero extends React.Component {
-
+export default class Hero extends Component {
   render() {
     return (
       <div className="main-bg">

@@ -1,7 +1,7 @@
-import React from 'react';
-import { browserHistory } from 'react-router';
-import { submitQueryAndType } from '../actions'
-import { connect } from 'react-redux'
+import React                  from 'react';
+import { browserHistory }     from 'react-router';
+import { submitQueryAndType } from '../actions';
+import { connect }            from 'react-redux';
 
 class SearchLanding extends React.Component {
   constructor(props) {

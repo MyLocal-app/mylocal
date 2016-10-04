@@ -1,9 +1,7 @@
 import { AUTH_USER, UNAUTH_USER, AUTH_ERROR } from '../constants'
 
 export default function(state = {}, action) {
-    // update existing state
   switch(action.type){
-
     case AUTH_USER:
       return { ...state, error:'', authenticated: true, name: action.payload }
     case UNAUTH_USER:

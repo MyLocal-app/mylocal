@@ -1,19 +1,18 @@
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
-import Auth       from './reducer_Auth';
-import Eventbrite from './reducer_Eventbrite';
-import SearchYelp from './reducer_SearchYelp'
-import SearchBar  from './reducer_SearchBar';
-import Categories from './reducer_Categories';
+import Auth                from './reducer_Auth';
+import EventbriteResults   from './reducer_EventbriteResults';
+import YelpResults         from './reducer_YelpResults';
+import SearchTerms         from './reducer_SearchTerms';
+import Categories          from './reducer_Categories';
 
 const rootReducer = combineReducers({
-
   categories: Categories,
-  eventbrite: Eventbrite,
-  yelpResults: SearchYelp,
+  eventbriteResults: EventbriteResults,
+  yelpResults: YelpResults,
   form: form,
   auth: Auth,
-  searchTerms: SearchBar
+  searchTerms: SearchTerms
 });
 
 export default rootReducer;

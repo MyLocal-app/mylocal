@@ -1,4 +1,4 @@
-import React from 'react';
+import React             from 'react';
 import SearchLocationBar from '../containers/SearchLocationBar';
 
 export default class SearchLocation extends React.Component {

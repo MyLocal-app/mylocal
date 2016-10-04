@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect }          from 'react-redux';
 
 class ResultsEventbrite extends Component {
   render() {
@@ -7,12 +7,12 @@ class ResultsEventbrite extends Component {
       <div className="results">
       <div style={{ marginTop:'87px' }}> </div>
       <h2 className="searchresults-main">
-      { this.props.eventbrite.length === 0 ? "Searching for Events" : "Search Results for Restaurants" }</h2>
+      { this.props.eventbriteResults.length === 0 ? "Searching for Events" : "Search Results for Restaurants" }</h2>
       <input placeholder="Filter" className="inputBox filter" />
       <div className="clearfloat"></div>
-      { this.props.eventbrite.length === 0 ? <img className="loading" src="https://i.imgur.com/EATfJf4.gif" /> : <div></div> }
+      { this.props.eventbriteResults.length === 0 ? <img className="loading" src="https://i.imgur.com/EATfJf4.gif" /> : <div></div> }
       <hr />
-      { this.props.eventbrite.map(function (eventData) {
+      { this.props.eventbriteResults.map(function (eventData) {
         return (
           <div className="result" key={eventData.id}>
             <div className="row">
@@ -38,8 +38,8 @@ class ResultsEventbrite extends Component {
   }
 }
 
-function mapStateToProps({ eventbrite }) {
-  return { eventbrite }
+function mapStateToProps({ eventbriteResults }) {
+  return { eventbriteResults }
 };
 
 export default connect(mapStateToProps)(ResultsEventbrite)

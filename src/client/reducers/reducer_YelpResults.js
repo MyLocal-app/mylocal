@@ -1,9 +1,9 @@
-import { SEARCH_YELP } from '../constants'
+import { YELP_RESULTS } from '../constants';
 
 export default function(state = [], action) {
   switch(action.type) {
-    case SEARCH_YELP:
+    case YELP_RESULTS:
       return action.payload;
   }
   return state;
-}
+};

@@ -1,8 +1,8 @@
-import React from 'react';
-import Autocomplete from 'react-google-autocomplete';
-import { browserHistory } from 'react-router';
-import { connect } from 'react-redux';
-import { searchYelp } from '../actions';
+import React                from 'react';
+import Autocomplete         from 'react-google-autocomplete';
+import { browserHistory }   from 'react-router';
+import { connect }          from 'react-redux';
+import { searchYelp }       from '../actions';
 import { searchEventbrite } from '../actions';
 
 class SearchLocationBar extends React.Component {

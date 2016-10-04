@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CategoryLeft from '../components/CategoryLeft';
-import CategoryRight from '../components/CategoryRight';
-import { connect } from 'react-redux';
+import CategoryLeft         from '../components/CategoryLeft';
+import CategoryRight        from '../components/CategoryRight';
+import { connect }          from 'react-redux';
 
 class Categories extends Component {
   render() {
