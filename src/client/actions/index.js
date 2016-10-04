@@ -16,10 +16,8 @@ import { YELP_RESULTS }                       from '../constants';
 export function signinUser({ email, password }) {
   return function(dispatch) {
     axios.post('/signin', { email, password })
-    .then(response =>{
-      //update state - dispatch action by redux-thunk
+    .then(response => {
       dispatch({ type: AUTH_USER, payload: 'welcome back!' });
-      // send user to / and update the history stack
       browserHistory.push('/');
       localStorage.setItem('token', response.data.token);
     })
@@ -68,10 +66,6 @@ export function searchEventbrite (query, location) {
   const EVENTBRITE_API_KEY = "4JELE3WKM2XRYPGWNE7Q";
   const EVENTBRITE_URL = `https://www.eventbriteapi.com/v3/events/search/?token=${ EVENTBRITE_API_KEY }`;
   return function(dispatch) {
-    dispatch({
-      type: EVENTBRITE_RESULTS,
-      payload: []
-    });
     browserHistory.push('/search/events');
     const url = `${ EVENTBRITE_URL }&q=${ query }&location.address=${ location }`;
     const request = axios.get(url)
@@ -90,10 +84,6 @@ export function searchEventbrite (query, location) {
 export function searchYelp (location) {
   const YELP_URL = '/search/restaurants';
   return function(dispatch) {
-    dispatch({
-      type: YELP_RESULTS,
-      payload: []
-    });
     browserHistory.push('/search/restaurants');
     const url = `${ YELP_URL }?location=${ location }&term=restaurant`;
     const request = axios.get(url)
