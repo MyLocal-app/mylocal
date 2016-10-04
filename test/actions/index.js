@@ -1,6 +1,6 @@
 import { expect } from '../test_helper';
 import { signupUser, signinUser, authError, signoutUser } from '../../src/client/actions';
-import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from '../../src/client/constants/types';
+import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from '../../src/client/constants';
 
 
 

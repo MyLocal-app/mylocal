@@ -1,10 +1,11 @@
 import { expect } from '../test_helper';
 var request = require('request');
-var server = 'http://localhost:3000'
+require('dotenv').config();
+var server = 'http://localhost:' + process.env.PORT;
 
 describe('server', function() {
   it('should respond to GET requests for / with a 200 status code', function(done) {
-    request('http://localhost:3000', function(error, response, body) {
+    request(server, function(error, response, body) {
       expect(response.statusCode).to.equal(200);
       done();
     });
@@ -38,7 +39,6 @@ describe('server', function() {
   //       email: 'Jono333@jono.com',
   //       password: 'Do my bidding!'}
   //   };
-
   //   request(requestParams, function(error, response, body) {
   //     expect(response.statusCode).to.equal(200);
   //     done();

@@ -12,6 +12,7 @@ import chaiJquery from 'chai-jquery';
 //Set up a test environment to run like a browswer in the command line
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = global.document.defaultView;
+global.navigator = { userAgent: 'node.js' };
 const $ = jquery(global.window);
 //build a 'renderComponent' helper that should render a given react class
 function renderComponent (ComponentClass, props = {}, state = {}) {
