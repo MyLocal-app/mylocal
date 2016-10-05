@@ -4,8 +4,8 @@ import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from '../constants';
 import { SEARCH_TERMS }                       from '../constants';
 import { EVENTBRITE_RESULTS }                 from '../constants';
 import { YELP_RESULTS }                       from '../constants';
-import { RESTAURANT }                         from '../constants'
-
+import { RESTAURANT }                         from '../constants';
+import { ADD_TASK_TOP }                       from '../constants';
 // action submits email, pw to the server
 // action creator > action > Dispatch > sent to all reducers
 // we are using redux thunk, because it gives you access to Dispatch
@@ -111,3 +111,45 @@ export function fetchRestaurant(id) {
     });
   }
 };
+
+export function addTask({ title, description, category, hours, volunteer, dollarvalue, image = '' }, location) {
+  return function(dispatch) {
+    const header = {
+      headers: {
+        authorization: localStorage.getItem('token')
+      }
+    };
+    const task = {
+      title,
+      description,
+      category,
+      hours,
+      volunteer,
+      dollarvalue,
+      location,
+      image
+    };
+    axios.post('/api/addTask', task, header)
+    .then(response =>{
+      dispatch({ type: ADD_TASK_TOP, payload: response.data });
+    })
+    .catch(error => console.log(error));
+  };
+}
+
+export function getTasks(query) {
+  return function(dispatch) {
+    axios.get('/api/getTasks')
+    .then(response =>{
+      dispatch({ type: GET_TASKS, payload: response.data });
+    })
+    .catch(error => console.log(error));
+  };
+}
+
+
+
+
+
+
+

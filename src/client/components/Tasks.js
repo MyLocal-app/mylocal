@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import AddTask from './AddTask';
-import TaskList from '../components/TaskList';
+import TaskList from './TaskList';
 
 export default class Tasks extends Component {
   render(){
-    //search methods 
+    //search methods
     return (
       //HTML form: search
       <div>

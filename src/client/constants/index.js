@@ -5,3 +5,5 @@ export const SEARCH_TERMS = 'SEARCH_TERMS';
 export const EVENTBRITE_RESULTS = 'EVENTBRITE_RESULTS';
 export const YELP_RESULTS = 'YELP_RESULTS';
 export const RESTAURANT = 'RESTAURANT';
+export const ADD_TASK_TOP = 'ADD_TASK_TOP';
+export const GET_TASKS = 'GET_TASKS';

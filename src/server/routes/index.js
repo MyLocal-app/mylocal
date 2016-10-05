@@ -18,6 +18,9 @@ router.post('/signup', handler.signup);
 // signin route
 router.post('/signin', requireSignin, handler.signin);
 
+// call from client for add task
+router.post('/api/addTask', requireAuth, handler.addTask);
+
 // call from client for yelp search
 router.get('/api/search/restaurants', handler.searchYelp);
 
@@ -33,5 +36,6 @@ router.get('/fetchRestaurant/:id', handler.fetchRestaurant);
 router.get('/*', function (req, res) {
   res.sendFile('index.html', { root: __dirname + '/../../public/' });
 });
+
 
 module.exports = router;

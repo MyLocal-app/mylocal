@@ -1,5 +1,6 @@
 // require the db models
 var User = require('../db/user');
+var Task = require('../db/task');
 
 // For authentication
 const jwt = require('jwt-simple');
@@ -75,3 +76,37 @@ exports.fetchRestaurant = function(req, res) {
       res.send(err)
     });
 };
+
+
+exports.addTask = function(req, res) {
+  console.log('IN THE SERVER', req.body, req.user);
+
+  const taskObj = {
+    owner: req.user.email,
+    title: req.body.title,
+    description: req.body.description,
+    hours: req.body.hours,
+    volunteer: req.body.volunteer,
+    dollarValue: req.body.dollarValue,
+    location: req.body.location,
+    category: req.body.category,
+    image: req.body.image,
+    assignedTo: '',
+    completed: false,
+  };
+  var task = new Task(taskObj);
+  task.save(function(err, success) {
+    if (err) console.log(err);
+    res.setHeader('Content-Type', 'application/json');
+    res.send({ task: success });
+  });
+};
+
+
+
+
+
+
+
+
+

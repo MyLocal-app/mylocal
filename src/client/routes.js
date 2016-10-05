@@ -9,7 +9,7 @@ import ResultsEventbrite from './containers/ResultsEventbrite';
 import Signout           from './containers/Signout';
 import Signup            from './containers/Signup';
 import Profile           from './containers/Profile';
-import Tasks             from './containers/Tasks';
+import Tasks             from './components/Tasks';
 
 export default (
   <Router path="/" component = { App } >

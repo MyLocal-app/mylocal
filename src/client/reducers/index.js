@@ -6,6 +6,7 @@ import YelpResults         from './reducer_YelpResults';
 import SearchTerms         from './reducer_SearchTerms';
 import Categories          from './reducer_Categories';
 import Restaurant          from './reducer_Restaurant';
+import Tasks               from './reducer_Tasks';
 
 const rootReducer = combineReducers({
   categories: Categories,
@@ -14,7 +15,9 @@ const rootReducer = combineReducers({
   form: Form,
   auth: Auth,
   searchTerms: SearchTerms,
-  restaurant: Restaurant
+  restaurant: Restaurant,
+  tasks: Tasks
+
 });
 
 export default rootReducer;
