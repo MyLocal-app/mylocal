@@ -202,18 +202,10 @@ div.pac-container.pac-logo::after {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.loading {
-  display: block;
-  margin: 0 auto;
-}
 
 .main-banner {
   background-image: url(../img/main-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-}
-
-label {
-  display: block;
 }

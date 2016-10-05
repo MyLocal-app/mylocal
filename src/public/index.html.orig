@@ -22,9 +22,18 @@
     <!-- Google scripts -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD33syx6rVUERE2IZZnGZuNyFh_f36-J4c&libraries=places"></script>    
     <!-- Scripts -->
+<<<<<<< e594134b0b096c34369d07daa0376dabc44f447e
+      <script src="/lib/jquery-3.1.1.js"></script>
+      <script src="/lib/tether.js"></script>
+      <script src="/lib/bootstrap.js"></script>
+      <script src="/lib/bundle.js"></script>
+    <!-- Google scripts -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD33syx6rVUERE2IZZnGZuNyFh_f36-J4c&libraries=places"></script>    
+=======
       <script src="lib/jquery-3.1.1.js"></script>
       <script src="lib/tether.js"></script>
       <script src="lib/bootstrap.js"></script>
       <script src="lib/bundle.js"></script>
+>>>>>>> Add task submit modal
   </body>
 </html>

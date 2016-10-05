@@ -50,7 +50,7 @@ header {
 
 .typeSelect {
   font-size: 1.7rem;
-  padding:0px 35px 0px 20px;
+  padding:0px 100px 0px 20px;
   border: 2px solid #c0c0c0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -214,6 +214,70 @@ div.pac-container.pac-logo::after {
   height: 100vh;
 }
 
+<<<<<<< e594134b0b096c34369d07daa0376dabc44f447e
+.profile-bg {
+  margin-top: 87px;
+  background-image: url(../img/profile-bg.jpg);
+  background-repeat:  no-repeat;
+  background-size: cover;
+  background-position:  center center;
+  padding: 40px;
+  min-height: 100px;
+  text-align:  center;
+  color: white;
+  font-family: 'Julius Sans One'
+}
+
+.profile-img {
+  border-radius: 100%;
+}
+
+.profile-panel {
+  font-family: 'Text Me One';
+  padding: 10px 20px;
+}
+
+.review {
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 20px 10px;
+  border-bottom: none;
+}
+
+.review:last-of-type {
+  border-bottom: 1px solid #eee;
+}
+
+.review-profile {
+  text-align: center;
+}
+
+.review-content {
+  border-left: 1px solid #eee;
+}
+
+.review-username {
+  margin-top: 10px;
+}
+
+hr.review-line-sm {
+  display: none
+}
+
+.btn-more-info {
+  outline: none !important;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .review-content {
+    border: none;
+  }
+  hr.review-line-sm {
+    display: block;
+  }
+=======
 label {
   display: block;
+>>>>>>> Add task submit modal
 }
