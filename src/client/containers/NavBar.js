@@ -17,9 +17,10 @@ import AddTask              from '../components/AddTask';
       ];
     } else {
       return [
-         <li className="nav-item" key={ 1 }>
+        <li className="nav-item" key={ 1 }>
           <Link to="/" className="nav-item nav-link active">{ this.props.auth.name }</Link>
         </li>,
+        <AddTask />,
         <li className="nav-item" key= { 2 } >
           <Link to="/signout" className="nav-item nav-link active">Sign Out</Link>
         </li>
@@ -49,7 +50,6 @@ import AddTask              from '../components/AddTask';
                   <Link className="nav-item nav-link active" to="/">Home</Link>
                 </li>
                 { this.isAuthenticated() }
-                <AddTask />
               </ul>
             </div>
           </nav>

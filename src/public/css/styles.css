@@ -210,7 +210,6 @@ div.pac-container.pac-logo::after {
   height: 100vh;
 }
 
-<<<<<<< 8ea29a986e4b3d49cfbd9ae6b1478f80ce9df4aa
 .profile-bg {
   margin-top: 87px;
   background-image: url(../img/profile-bg.jpg);
@@ -226,6 +225,8 @@ div.pac-container.pac-logo::after {
 
 .profile-img {
   border-radius: 100%;
+  width: 250px;
+  height: 250px;
 }
 
 .profile-panel {
@@ -300,4 +301,13 @@ label {
 .loading {
   display: block;
   margin: 0 auto;
+}
+
+.btn-add-task {
+  color: #00a4d3
+}
+
+.btn-more-info {
+  outline: none !important;
+  margin-top: 20px;
 }

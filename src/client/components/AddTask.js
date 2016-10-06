@@ -29,15 +29,11 @@ export default class AddTask extends Component {
     this.setState({modalIsOpen: false});
   }
 
-  
-  // onModalSubmit() {
-  //   this.
-  // }
 
   render(){
     return (
-      <div style={{ float: "left", marginLeft: "10px", marginTop: "3px" }}>
-        <button onClick={this.openModal}>Add Task</button>
+      <li className="nav-item">
+        <button className="btn-add-task" onClick={this.openModal}>Add Task</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -48,9 +44,9 @@ export default class AddTask extends Component {
             }
           }}>
           <h2 ref="subtitle">Add Task</h2>
-          {this.state.modalIsOpen? <TaskForm close={this.closeModal} /> : <br />}
+          {this.state.modalIsOpen ? <TaskForm close={this.closeModal} /> : <br />}
         </Modal>
-      </div>
+      </li>
     )
   }
 }

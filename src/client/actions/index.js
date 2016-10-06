@@ -5,11 +5,9 @@ import { SEARCH_TERMS }                       from '../constants';
 import { EVENTBRITE_RESULTS }                 from '../constants';
 import { YELP_RESULTS }                       from '../constants';
 import { RESTAURANT }                         from '../constants';
-import { ADD_TASK_TOP, GET_TASKS }                       from '../constants';
+import { ADD_TASK_TOP, GET_TASKS }            from '../constants';
+
 // action submits email, pw to the server
-// action creator > action > Dispatch > sent to all reducers
-// we are using redux thunk, because it gives you access to Dispatch
-// we are not using redux promise
 // if success, update state of app to authenticated
 // save jwt token
 // redirect
@@ -40,9 +38,10 @@ export function signoutUser() {
   return { type: UNAUTH_USER };
 };
 
-export function signupUser({ email, password, firstName, lastName, address, file }) {
-  console.log(file, email)
+export function signupUser(firstName, lastName, email, password, address, file) {
+  console.log('acton',file)
   return function(dispatch) {
+    console.log('actondispatch',file)
     axios.post('/signup', { email, password, firstName, lastName, address, file })
     .then(response =>{
       dispatch({ type: AUTH_USER, payload: firstName + ' ' + lastName});

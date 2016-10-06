@@ -28,7 +28,10 @@ class SearchLocationBar extends React.Component {
       browserHistory.push(`/search/restaurants?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
     } else if (this.props.searchTerms.type === 'events') {
       browserHistory.push(`/search/events?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
+    } else if (this.props.searchTerms.type === 'tasks') {
+      browserHistory.push(`/search/tasks?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
     }
+
   }
 
   render() {

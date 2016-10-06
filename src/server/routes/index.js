@@ -10,7 +10,7 @@ var requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false });
 
 //start multer for file uploads
-// var multer = require('multer');
+var multer = require('multer');
 // // var storage = multer.diskStorage({
 // //   destination: function(req, file, cb) {
 // //     //cb provides a placeholder for dest directory of files
@@ -21,13 +21,13 @@ const requireSignin = passport.authenticate('local', { session: false });
 // //     cb(null, Date.now() + '-' + file.originalname)
 // //   }  
 // // });
-// var upload = multer({ dest: __dirname + '/../../public/uploads' });
+var upload = multer({ dest: __dirname + '/../../public/uploads' });
 
 // require the route handlers
 var handler = require('../controllers');
 
 // signup route with multer middleware
-router.post('/signup', handler.signup);
+router.post('/signup', upload.any(), handler.signup);
 
 // signin route
 router.post('/signin', requireSignin, handler.signin);

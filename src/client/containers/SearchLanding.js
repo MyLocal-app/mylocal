@@ -37,7 +37,7 @@ class SearchLanding extends React.Component {
           <option disabled value="">- Type -</option>
           <option value="restaurants">Restaurants</option>
           <option value="events">Events</option>
-          <option value="jobs">Jobs</option>
+          <option value="tasks">Tasks</option>
           <option value="volunteers">Volunteers</option>
         </select>
         <div></div>

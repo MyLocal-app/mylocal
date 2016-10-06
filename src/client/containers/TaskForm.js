@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import { connect }          from 'react-redux';
-import { addTask, getTasks }       from '../actions';
+import { addTask }       from '../actions';
 
 class TaskForm extends Component {
   constructor(props){
@@ -33,7 +33,6 @@ class TaskForm extends Component {
       location: this.state.location
     });
 
-    // console.log(this.state.task.volunteer)
   }
 
   onInputChange(event) {
@@ -136,4 +135,4 @@ class TaskForm extends Component {
 }
 
 
-export default connect(null, { addTask, getTasks })(TaskForm);
+export default connect(null, { addTask })(TaskForm);

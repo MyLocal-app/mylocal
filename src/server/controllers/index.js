@@ -23,13 +23,7 @@ exports.signin = function(req, res) {
 };
 
 exports.signup = function(req, res) {
-//   console.log(req.body.email, req.body.file)
-//   fs.readFile(req.body.file, function (err, data) {
-//     var newPath = __dirname + '/../../public/uploads';
-//     fs.writeFile(newPath, data, function (err) {
-//       if(err) console.log('error with file')
-//   });
-// });
+  console.log('file is ', req.files, req.body.file, req.body)
   var email = req.body.email;
   var password = req.body.password;
   var firstName = req.body.firstName;

@@ -16,12 +16,12 @@ export default (
   <Router path="/" component = { App } >
     <IndexRoute component = { Home } />
       <Route path="/signin" component = { Signin }/>
+      <Route path="/signout" component = { Signout } />
+      <Route path="/signup" component = { Signup } />
       <Route path="/search" component = { SearchLocation } />
       <Route path="/search/restaurants" component = { ResultsYelp } />
       <Route path="/search/events" component = { ResultsEventbrite } />
-      <Route path="/signout" component = { Signout } />
-      <Route path="/signup" component = { Signup } />
-      <Route path="/tasks" component = { Tasks } />
+      <Route path="/search/tasks" component = { Tasks } />
       <Route path="/user" component = { ProfileUser } />
   </Router>
 );
