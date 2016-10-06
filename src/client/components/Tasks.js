@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AddTask from './AddTask';
-import TaskList from './TaskList';
+import TaskList from '../containers/TaskList';
 
 export default class Tasks extends Component {
   render(){
@@ -8,7 +8,6 @@ export default class Tasks extends Component {
     return (
       //HTML form: search
       <div>
-        <AddTask />
         <TaskList />
       </div>
     )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link }             from 'react-router';
 import { connect }          from 'react-redux';
+import AddTask              from '../components/AddTask';
 
  class NavBar extends Component {
 
@@ -48,6 +49,7 @@ import { connect }          from 'react-redux';
                   <Link className="nav-item nav-link active" to="/">Home</Link>
                 </li>
                 { this.isAuthenticated() }
+                <AddTask />
               </ul>
             </div>
           </nav>

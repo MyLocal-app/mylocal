@@ -109,6 +109,16 @@ exports.addTask = function(req, res) {
   });
 };
 
+exports.getTask = function(req, res) {
+  console.log()
+  Task.find({}, function(err, tasks){
+    if(err){
+      console.error(err);
+    }
+    res.json(tasks);
+  })
+}
+
 
 
 

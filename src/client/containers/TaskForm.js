@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import { connect }          from 'react-redux';
-import { addTask }       from '../actions';
+import { addTask, getTasks }       from '../actions';
 
 class TaskForm extends Component {
   constructor(props){
@@ -56,12 +56,15 @@ class TaskForm extends Component {
   }
 
   onFormSubmit(event){
+    event.preventDefault();
+    this.props.close();
     this.props.addTask( this.state.task, this.state.location);
   }
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
+      <form onSubmit={this.onFormSubmit} style={{width:"50%", margin:"0 auto"}}>
+        <div className={"form-column"}>
         <label>Title</label>
         <input
           className="inputBox"
@@ -94,6 +97,8 @@ class TaskForm extends Component {
           onChange={this.onInputChange}
           value={this.state.task.hours}
         />
+        </div>
+        <div className={"form-column"}>
         <label>Volunteer</label>
         <input
           className="inputBox"
@@ -123,6 +128,7 @@ class TaskForm extends Component {
           value={this.state.task.location}
         />
         <button action="submit" >Submit</button>
+        </div>
       </form>
 
     )
@@ -130,4 +136,4 @@ class TaskForm extends Component {
 }
 
 
-export default connect(null, { addTask })(TaskForm);
+export default connect(null, { addTask, getTasks })(TaskForm);

@@ -5,7 +5,7 @@ import { SEARCH_TERMS }                       from '../constants';
 import { EVENTBRITE_RESULTS }                 from '../constants';
 import { YELP_RESULTS }                       from '../constants';
 import { RESTAURANT }                         from '../constants';
-import { ADD_TASK_TOP }                       from '../constants';
+import { ADD_TASK_TOP, GET_TASKS }                       from '../constants';
 // action submits email, pw to the server
 // action creator > action > Dispatch > sent to all reducers
 // we are using redux thunk, because it gives you access to Dispatch
@@ -132,7 +132,8 @@ export function addTask({ title, description, category, hours, volunteer, dollar
     };
     axios.post('/api/addTask', task, header)
     .then(response =>{
-      dispatch({ type: ADD_TASK_TOP, payload: response.data });
+      console.log("inside actions: ", response.data);
+      dispatch({ type: ADD_TASK_TOP, payload: response.data.task });
     })
     .catch(error => console.log(error));
   };
@@ -142,7 +143,8 @@ export function getTasks(query) {
   return function(dispatch) {
     axios.get('/api/getTasks')
     .then(response =>{
-      dispatch({ type: GET_TASKS, payload: response.data });
+      console.log(response.data);
+      dispatch({ type: GET_TASKS, payload: response.data.reverse() });
     })
     .catch(error => console.log(error));
   };

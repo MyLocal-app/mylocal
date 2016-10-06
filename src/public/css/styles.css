@@ -210,6 +210,7 @@ div.pac-container.pac-logo::after {
   height: 100vh;
 }
 
+<<<<<<< 8ea29a986e4b3d49cfbd9ae6b1478f80ce9df4aa
 .profile-bg {
   margin-top: 87px;
   background-image: url(../img/profile-bg.jpg);
@@ -281,6 +282,15 @@ hr.review-line-sm {
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   height: 100px;
   margin-left: 50%;
+}
+
+.modal {
+  top: 100px;
+}
+
+.form-column {
+  float: left;
+  margin: 20px;
 }
 
 label {

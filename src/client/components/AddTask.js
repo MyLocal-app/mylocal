@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import TaskForm from '../containers/TaskForm';
 
+
+
 export default class AddTask extends Component {
 
   constructor(props) {
@@ -27,26 +29,26 @@ export default class AddTask extends Component {
     this.setState({modalIsOpen: false});
   }
 
-
-
+  
   // onModalSubmit() {
   //   this.
   // }
 
   render(){
     return (
-      <div>
-      <div style={{ 'marginTop':'300px' }}></div>
-        <button onClick={this.openModal}>Open Modal</button>
+      <div style={{ float: "left", marginLeft: "10px", marginTop: "3px" }}>
+        <button onClick={this.openModal}>Add Task</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeM2000} >
-
-          <h2 ref="subtitle">Hello</h2>
-          <div>I am a modal</div>
-          <button onClick={this.closeModal}>close</button>
-          {this.state.modalIsOpen? <TaskForm /> : <br />}
+          onRequestClose={this.closeM2000} 
+          style={{
+            content: {
+              top: "100px"
+            }
+          }}>
+          <h2 ref="subtitle">Add Task</h2>
+          {this.state.modalIsOpen? <TaskForm close={this.closeModal} /> : <br />}
         </Modal>
       </div>
     )
