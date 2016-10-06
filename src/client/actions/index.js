@@ -40,9 +40,10 @@ export function signoutUser() {
   return { type: UNAUTH_USER };
 };
 
-export function signupUser({ email, password, firstName, lastName, address }) {
+export function signupUser({ email, password, firstName, lastName, address, file }) {
+  console.log(file, email)
   return function(dispatch) {
-    axios.post('/signup', { email, password, firstName, lastName, address })
+    axios.post('/signup', { email, password, firstName, lastName, address, file })
     .then(response =>{
       dispatch({ type: AUTH_USER, payload: firstName + ' ' + lastName});
       localStorage.setItem('token', response.data.token);

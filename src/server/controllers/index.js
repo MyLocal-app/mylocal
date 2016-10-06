@@ -1,6 +1,7 @@
 // require the db models
 var User = require('../db/user');
 var Task = require('../db/task');
+//var fs = require('fs')
 
 // For authentication
 const jwt = require('jwt-simple');
@@ -22,6 +23,13 @@ exports.signin = function(req, res) {
 };
 
 exports.signup = function(req, res) {
+//   console.log(req.body.email, req.body.file)
+//   fs.readFile(req.body.file, function (err, data) {
+//     var newPath = __dirname + '/../../public/uploads';
+//     fs.writeFile(newPath, data, function (err) {
+//       if(err) console.log('error with file')
+//   });
+// });
   var email = req.body.email;
   var password = req.body.password;
   var firstName = req.body.firstName;
@@ -76,7 +84,6 @@ exports.fetchRestaurant = function(req, res) {
       res.send(err)
     });
 };
-
 
 exports.addTask = function(req, res) {
   console.log('IN THE SERVER', req.body, req.user);

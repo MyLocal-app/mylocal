@@ -10,6 +10,7 @@ import Signout           from './containers/Signout';
 import Signup            from './containers/Signup';
 import Profile           from './containers/Profile';
 import Tasks             from './components/Tasks';
+import ProfileUser       from './containers/ProfileUser';
 
 export default (
   <Router path="/" component = { App } >
@@ -21,5 +22,6 @@ export default (
       <Route path="/signout" component = { Signout } />
       <Route path="/signup" component = { Signup } />
       <Route path="/tasks" component = { Tasks } />
+      <Route path="/user" component = { ProfileUser } />
   </Router>
 );
