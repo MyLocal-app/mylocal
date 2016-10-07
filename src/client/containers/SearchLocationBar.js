@@ -35,7 +35,7 @@ class SearchLocationBar extends React.Component {
     } else if (this.props.searchTerms.type === 'tasks') {
       browserHistory.push(`/search/tasks?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
     } else if (this.props.searchTerms.type === 'skilled tasker') {
-      browserHistory.push(`/search/tasks?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
+      browserHistory.push(`/search/services?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
     }
 
   }

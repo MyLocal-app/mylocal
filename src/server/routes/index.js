@@ -19,7 +19,7 @@ var multer = require('multer');
 // //   filename: function(req, file, cb) {
 // //     //cb provides placeholder for dest.filename
 // //     cb(null, Date.now() + '-' + file.originalname)
-// //   }  
+// //   }
 // // });
 var upload = multer({ dest: __dirname + '/../../public/uploads' });
 
@@ -35,6 +35,9 @@ router.post('/signin', requireSignin, handler.signin);
 // call from client for add task
 router.post('/api/addTask', requireAuth, handler.addTask);
 
+//call from client for add service
+router.post('/api/addService', requireAuth, handler.addService);
+
 // call from client for yelp search
 router.get('/api/search/restaurants', handler.searchYelp);
 
@@ -47,6 +50,8 @@ router.get('/secured', requireAuth, function(req, res) {
 router.get('/fetchRestaurant/:id', handler.fetchRestaurant);
 
 router.get('/api/getTasks', handler.getTask);
+
+router.get('/api/getServices', handler.getService);
 
 //catchall
 router.get('/*', function (req, res) {

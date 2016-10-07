@@ -7,6 +7,7 @@ import SearchTerms         from './reducer_SearchTerms';
 import Categories          from './reducer_Categories';
 import Restaurant          from './reducer_Restaurant';
 import Tasks               from './reducer_Tasks';
+import Services            from './reducer_Services';
 
 const rootReducer = combineReducers({
   categories: Categories,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   auth: Auth,
   searchTerms: SearchTerms,
   restaurant: Restaurant,
-  tasks: Tasks
+  tasks: Tasks,
+  services: Services
 
 });
 

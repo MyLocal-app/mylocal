@@ -6,6 +6,7 @@ import { EVENTBRITE_RESULTS }                 from '../constants';
 import { YELP_RESULTS }                       from '../constants';
 import { RESTAURANT }                         from '../constants';
 import { ADD_TASK_TOP, GET_TASKS }            from '../constants';
+import { ADD_SERVICE_TOP, GET_SERVICES }      from '../constants';
 
 // action submits email, pw to the server
 // if success, update state of app to authenticated
@@ -155,6 +156,41 @@ export function getTasks(query) {
   };
 }
 
+
+export function addService({ title, description, category, volunteer, rate }, location) {
+  return function(dispatch) {
+    const header = {
+      headers: {
+        authorization: localStorage.getItem('token')
+      }
+    };
+    const service = {
+      title,
+      description,
+      category,
+      rate,
+      volunteer,
+      location
+    };
+    axios.post('/api/addService', service, header)
+    .then(response =>{
+      console.log("inside actions: ", response.data);
+      dispatch({ type: ADD_SERVICE_TOP, payload: response.data.service });
+    })
+    .catch(error => console.log(error));
+  };
+}
+
+export function getServices(query) {
+  return function(dispatch) {
+    axios.get('/api/getServices')
+    .then(response =>{
+      console.log(response.data);
+      dispatch({ type: GET_SERVICES, payload: response.data.reverse() });
+    })
+    .catch(error => console.log(error));
+  };
+}
 
 
 

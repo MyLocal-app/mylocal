@@ -1,6 +1,7 @@
 // require the db models
 var User = require('../db/user');
 var Task = require('../db/task');
+var Service = require('../db/service');
 //var fs = require('fs')
 
 // For authentication
@@ -83,7 +84,6 @@ exports.fetchRestaurant = function(req, res) {
 };
 
 exports.addTask = function(req, res) {
-  console.log('IN THE SERVER', req.body, req.user);
 
   const taskObj = {
     owner: req.user.email,
@@ -115,6 +115,39 @@ exports.getTask = function(req, res) {
     res.json(tasks);
   })
 }
+
+exports.addService = function(req, res) {
+
+  const fullName = req.user.firstName + ' ' + req.user.lastName;
+
+  const serviceObj = {
+    ownerName: fullName,
+    ownerEmail: req.user.email,
+    volunteer: req.body.volunteer,
+    category: req.body.category,
+    description: req.body.description,
+    rate: req.body.rate,
+    title: req.body.title,
+    location: req.body.location
+  };
+
+  var service = new Service(serviceObj);
+  service.save(function(err, success) {
+    if (err) console.log(err);
+    res.setHeader('Content-Type', 'application/json');
+    res.send({ service: success });
+  });
+};
+
+exports.getService = function(req, res) {
+
+  Service.find({}, function(err, services){
+    if(err) {
+      console.error(err);
+    }
+    res.json(services);
+  });
+};
 
 
 

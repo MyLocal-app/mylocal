@@ -7,3 +7,5 @@ export const YELP_RESULTS = 'YELP_RESULTS';
 export const RESTAURANT = 'RESTAURANT';
 export const ADD_TASK_TOP = 'ADD_TASK_TOP';
 export const GET_TASKS = 'GET_TASKS';
+export const ADD_SERVICE_TOP = 'ADD_SERVICE_TOP';
+export const GET_SERVICES = 'GET_SERVICES';
