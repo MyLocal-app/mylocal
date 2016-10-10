@@ -12,7 +12,8 @@ import TaskList          from './containers/TaskList';
 import ProfileUser       from './containers/ProfileUser';
 import ServiceList       from './containers/ServiceList';
 import VolunteerList     from './containers/VolunteerList';
-
+import ResultsFavorites  from './containers/ResultsFavorites';
+import AccountSettings   from './components/AccountSettings';
 
 export default (
   <Router path="/" component = { App } >
@@ -27,5 +28,8 @@ export default (
       <Route path="/search/volunteers" component = { VolunteerList } />
       <Route path="/search/tasks" component = { TaskList } />
       <Route path="/user" component = { ProfileUser } />
+      <Route path="/favorites" component = { ResultsFavorites } />
+      <Route path="/account" component = { AccountSettings } />
+
   </Router>
 );

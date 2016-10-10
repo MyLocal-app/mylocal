@@ -320,3 +320,55 @@ td {
 .favorite-on {
   color: #f77;
 }
+
+.cursor {
+  cursor: pointer;
+}
+
+.settings-bar {
+  position: fixed;
+  top: 87px;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-family: 'Julius Sans One', sans-serif;
+  z-index: 1030;
+}
+
+.general-settings {
+  padding: 30px 50px;
+}
+
+.settings-main {
+  color: #00c8f8;
+  font-family: 'Text Me One', sans-serif;
+}
+
+.settings-panel {
+  margin-top: 50px;
+  padding: 0 30px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.settings-subtitle {
+
+}
+
+@media (max-width: 544px) {
+  .settings-panel {
+    padding: 0;
+  }
+}
+
+@media (max-width: 300px) {
+  .general-settings {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .navbar-fluid {
+    padding-left: 5px !important;
+    padding-right: 20px !important;
+  }
+}

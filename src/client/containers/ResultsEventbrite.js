@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import ResultsEventbriteItem from '../components/ResultsEventbriteItem';
+import ResultsEventbriteItem from './ResultsEventbriteItem';
 import { connect }           from 'react-redux';
 import { searchEventbrite }  from '../actions';
 

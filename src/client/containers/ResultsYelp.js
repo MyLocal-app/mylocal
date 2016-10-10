@@ -4,7 +4,6 @@ import { connect }          from 'react-redux';
 import { browserHistory }   from 'react-router';
 import { searchYelp }       from '../actions';
 
-
 class ResultsYelp extends Component {
   componentDidMount() {
     this.props.searchYelp(this.props.location.query.location, this.props.location.query.q + ' restaurant');

@@ -22,8 +22,8 @@ import AddTask              from '../components/AddTask';
             { this.props.auth.name }
           </a>
           <div className="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <a className="dropdown-item" href="#">My Profile</a>
-            <a className="dropdown-item" href="#">My Favorites</a>
+            <Link className="dropdown-item" to="/account">My Profile</Link>
+            <Link className="dropdown-item" to="/favorites">My Favorites</Link>
             <AddTask />
             <div className="dropdown-divider"></div>
             <Link to="/signout" className="dropdown-item">Sign Out</Link>

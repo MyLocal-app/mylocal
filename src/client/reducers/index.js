@@ -10,6 +10,7 @@ import Tasks               from './reducer_Tasks';
 import Services            from './reducer_Services';
 import User                from './reducer_FetchUser';
 import Volunteers          from './reducer_Volunteers';
+import Favorites           from './reducer_Favorites';
 
 const rootReducer = combineReducers({
   categories: Categories,
@@ -22,8 +23,8 @@ const rootReducer = combineReducers({
   tasks: Tasks,
   services: Services,
   user: User,
-  volunteers: Volunteers
-
+  volunteers: Volunteers,
+  favorites: Favorites
 });
 
 export default rootReducer;

@@ -10,6 +10,7 @@ import { ADD_TASK_TOP, GET_TASKS }            from '../constants';
 import { ADD_SERVICE_TOP, GET_SERVICES }      from '../constants';
 import { FETCH_USER }                         from '../constants';
 import { GET_VOLUNTEERS }                     from '../constants';
+import { FAVORITES }                          from '../constants';
 
 // action submits email, pw to the server
 // if success, update state of app to authenticated
@@ -238,5 +239,30 @@ export function getVolunteers(query, coordinates ) {
   };
 }
 
+export function saveFavorites(token, type, value, action) {
+  return function(dispatch) {
+    const header = { headers: { authorization: localStorage.getItem('token') } };
+      axios.post('/api/saveFavorite', { type: type, value: value, action: action }, header)
+  }
+}
 
+export function updateFavorites(favorites, type, id) {
+  const newFavorites = favorites.filter(function(favorite) {
+          return !(favorite.type === type && favorite.value.id === id);
+        });
+  return {
+      type: FAVORITES,
+      payload: newFavorites
+  }
+}
 
+export function fetchFavorites(token) {
+  return function(dispatch) {
+    const header = { headers: { authorization: token } };
+      axios.get('/api/fetchFavorites', header)
+        .then(function(response) {
+          dispatch({ type: FAVORITES, payload: response.data });
+      })
+      .catch(error => console.log(error));
+  }
+}

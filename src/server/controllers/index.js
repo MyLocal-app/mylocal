@@ -283,6 +283,12 @@ exports.getVolunteer = function(req, res){
   })
 }
 
-
-
-
+exports.fetchFavorites = function(req, res, next) {
+  var email = req.user.email;
+  User.findOne({ email: email }, function(err, existingUser) {
+    if (err) return next(err);
+    if (existingUser) {
+      res.send(existingUser.favorites)
+    }
+  });
+};

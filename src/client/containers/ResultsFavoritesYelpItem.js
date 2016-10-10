@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 import axios                from 'axios';
 import { saveFavorites }    from '../actions';
-import { connect }          from 'react-redux';
+import { updateFavorites }  from '../actions';
+import { connect       }    from 'react-redux';
 
 class ResultsYelpItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      btnFavorite: false
-    };
-  }
-
-  toggleHeart() {
-    // setState does not change the value quick enough so creating another variable to use for sending via axios
-    var btnFavoriteToggle = !this.state.btnFavorite;
-    this.setState({
-      btnFavorite: btnFavoriteToggle
-    });
+  removeFavorite() {
     if (localStorage.getItem('token')) {
-      this.props.saveFavorites(localStorage.getItem('token'), 'restaurant', this.props.restaurant, btnFavoriteToggle)
+      this.props.updateFavorites(this.props.favorites, 'restaurant', this.props.restaurant.id)
+      this.props.saveFavorites(localStorage.getItem('token'), 'restaurant', this.props.restaurant, false)
     }
   }
 
@@ -48,8 +38,9 @@ class ResultsYelpItem extends Component {
           </div>
           <div className="col-md-1 text-xs-right">
             <a className="cursor">
-              <span title="Login and add to favorites">
-                <i className={ this.state.btnFavorite ?  'material-icons favorite favorite-on' : 'material-icons favorite'} onClick={ this.toggleHeart.bind(this) }>favorite
+              <span title="Click to remove from favorites">
+                <i className='material-icons favorite favorite-on' 
+                   onClick={ this.removeFavorite.bind(this) }>favorite
                 </i>
               </span>
             </a>
@@ -60,4 +51,4 @@ class ResultsYelpItem extends Component {
   }
 }
 
-export default connect(null, { saveFavorites })(ResultsYelpItem)
+export default connect(null, { saveFavorites, updateFavorites })(ResultsYelpItem)

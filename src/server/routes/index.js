@@ -55,6 +55,9 @@ router.get('/api/getVolunteers', handler.getVolunteer);
 // save a favorite to favorites list
 router.post('/api/saveFavorite', requireAuth, handler.saveFavorite);
 
+// fetch the favorites list
+router.get('/api/fetchFavorites', requireAuth, handler.fetchFavorites);
+
 //catchall
 router.get('/*', function (req, res) {
   res.sendFile('index.html', { root: __dirname + '/../../public/' });

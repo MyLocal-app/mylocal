@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import axios                from 'axios';
+import { saveFavorites }    from '../actions';
+import { connect }          from 'react-redux';
 
-export default class ResultsYelpItem extends Component {
+class ResultsEventbriteItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,9 +12,14 @@ export default class ResultsYelpItem extends Component {
   }
 
   toggleHeart() {
+    // setState does not change the value quick enough so creating another variable to use for sending via axios
+    var btnFavoriteToggle = !this.state.btnFavorite;
     this.setState({
-      btnFavorite: !this.state.btnFavorite
-    })
+      btnFavorite: btnFavoriteToggle
+    });
+  if (localStorage.getItem('token')) {
+      this.props.saveFavorites(localStorage.getItem('token'), 'event', this.props.eventData, btnFavoriteToggle)
+    }
   }
 
   render() {
@@ -32,10 +40,17 @@ export default class ResultsYelpItem extends Component {
             <p className="desc">{ this.props.eventData.description.text }</p>
           </div>
           <div className="col-md-1 text-xs-right">
-            <i className={ this.state.btnFavorite ?  'material-icons favorite favorite-on' : 'material-icons favorite'} onClick={ this.toggleHeart.bind(this) }>favorite</i>
+            <a className="cursor">
+              <span title="Login and add to favorites">
+                <i className={ this.state.btnFavorite ?  'material-icons favorite favorite-on' : 'material-icons favorite'} onClick={ this.toggleHeart.bind(this) }>favorite
+                </i>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     );
   }
 }
+
+export default connect(null, { saveFavorites })(ResultsEventbriteItem)
