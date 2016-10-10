@@ -31,10 +31,10 @@ class SearchLocationBar extends React.Component {
 
   onFormSubmit(event) {
 
-    // if(this.state.geometry.location !== undefined){
-    //   localStorage.setItem('longitude', this.state.geometry.location.lng())
-    //   localStorage.setItem('latitude', this.state.geometry.location.lat())
-    // }
+    if(this.state.geometry.location !== undefined){
+      localStorage.setItem('longitude', this.state.geometry.location.lng())
+      localStorage.setItem('latitude', this.state.geometry.location.lat())
+    }
 
     event.preventDefault();
     if (this.props.searchTerms.type === 'restaurants') {
@@ -45,6 +45,8 @@ class SearchLocationBar extends React.Component {
       browserHistory.push(`/search/tasks?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
     } else if (this.props.searchTerms.type === 'skilled tasker') {
       browserHistory.push(`/search/services?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
+    } else if (this.props.searchTerms.type === 'volunteers') {
+      browserHistory.push(`/search/volunteers?q=${ this.props.searchTerms.query }&location=${ this.state.location }`)
     }
 
   }

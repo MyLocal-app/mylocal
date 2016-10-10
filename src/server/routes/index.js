@@ -42,6 +42,8 @@ router.get('/api/getTasks', handler.getTask);
 
 router.get('/api/getServices', handler.getService);
 
+router.get('/api/getVolunteers', handler.getVolunteer);
+
 // save a favorite to favorites list
 router.post('/api/saveFavorite', requireAuth, handler.saveFavorite);
 

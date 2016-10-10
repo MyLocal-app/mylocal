@@ -9,6 +9,7 @@ import Restaurant          from './reducer_Restaurant';
 import Tasks               from './reducer_Tasks';
 import Services            from './reducer_Services';
 import User                from './reducer_FetchUser';
+import Volunteers          from './reducer_Volunteers';
 
 const rootReducer = combineReducers({
   categories: Categories,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   restaurant: Restaurant,
   tasks: Tasks,
   services: Services,
-  user: User
+  user: User,
+  volunteers: Volunteers
 
 });
 

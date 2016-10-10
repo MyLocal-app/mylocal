@@ -10,3 +10,4 @@ export const GET_TASKS = 'GET_TASKS';
 export const ADD_SERVICE_TOP = 'ADD_SERVICE_TOP';
 export const GET_SERVICES = 'GET_SERVICES';
 export const FETCH_USER = 'FETCH_USER';
+export const GET_VOLUNTEERS = 'GET_VOLUNTEERS';

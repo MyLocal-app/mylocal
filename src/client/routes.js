@@ -11,6 +11,8 @@ import Signup            from './containers/Signup';
 import TaskList          from './containers/TaskList';
 import ProfileUser       from './containers/ProfileUser';
 import ServiceList       from './containers/ServiceList';
+import VolunteerList     from './containers/VolunteerList';
+
 
 export default (
   <Router path="/" component = { App } >
@@ -22,6 +24,7 @@ export default (
       <Route path="/search/restaurants" component = { ResultsYelp } />
       <Route path="/search/events" component = { ResultsEventbrite } />
       <Route path="/search/services" component = { ServiceList } />
+      <Route path="/search/volunteers" component = { VolunteerList } />
       <Route path="/search/tasks" component = { TaskList } />
       <Route path="/user" component = { ProfileUser } />
   </Router>

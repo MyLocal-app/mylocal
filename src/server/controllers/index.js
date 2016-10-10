@@ -200,6 +200,27 @@ exports.saveFavorite = function(req, res, next) {
   });
 };
 
+exports.getVolunteer = function(req, res){
+
+  let query = {
+    volunteer: true,
+    coordinates : {
+      $near : {
+        $geometry: {
+          type: "point",
+          coordinates: [parseFloat(req.query.longitude), parseFloat(req.query.latitude)]
+        },
+        $maxDistance: 160000
+      }
+    }
+  }
+  Task.find(query, function(err, tasks){
+    if(err){
+      console.error(err);
+    }
+    res.json(tasks);
+  })
+}
 
 
 

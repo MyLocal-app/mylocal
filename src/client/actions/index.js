@@ -9,6 +9,7 @@ import { RESTAURANT }                         from '../constants';
 import { ADD_TASK_TOP, GET_TASKS }            from '../constants';
 import { ADD_SERVICE_TOP, GET_SERVICES }      from '../constants';
 import { FETCH_USER }                         from '../constants';
+import { GET_VOLUNTEERS }                     from '../constants';
 
 
 
@@ -207,6 +208,22 @@ export function fetchUser(email) {
       })
       .catch(error => console.log(error));
   }
+}
+
+export function getVolunteers(query, coordinates ) {
+  return function(dispatch) {
+    axios.get('/api/getVolunteers', {
+      params: {
+        longitude: coordinates[0],
+        latitude: coordinates[1]
+      }
+    })
+    .then(response => {
+      console.log(response.data);
+      dispatch({ type: GET_VOLUNTEERS, payload: response.data.reverse() });
+    })
+    .catch(error => console.log(error));
+  };
 }
 
 
