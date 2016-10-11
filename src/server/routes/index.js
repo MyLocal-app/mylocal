@@ -50,6 +50,9 @@ router.get('/fetchRestaurant/:id', handler.fetchRestaurant);
 //get tasks near user (there's a query string with longitude and latitude)
 router.get('/api/getTasks', handler.getTask);
 
+//get a list of tasks requested by the logged in user
+router.get('/api/getUserTasks', requireAuth, handler.getUserTasks);
+
 //get servives
 router.get('/api/getServices', handler.getService);
 

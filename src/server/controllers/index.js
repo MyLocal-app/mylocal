@@ -167,6 +167,16 @@ exports.getTask = function(req, res) {
   })
 }
 
+exports.getUserTasks = function(req, res) {
+  Task.find({ owner: req.user.email }, function(err, tasks){
+    if(err){
+      console.error(err);
+    }
+    console.log(tasks)
+    res.json(tasks);
+  })
+}
+
 exports.doTask = function(req, res) {
   Task.findOne({ _id: req.body.taskId}, function(err, task){
     if(task.assignedTo === ''){
@@ -208,12 +218,16 @@ exports.doTask = function(req, res) {
 
 exports.addReview = function(req, res) {
   User.findOne({ email: req.body.servicePerson }, function(err, user) {
+    if(err){
+      console.log(err);
+    }
     if(user.reviews === null) user.reviews = [];
     user.reviews.push({
       reviewerEmail: req.user.email,
       reviewerName: req.user.firstName + ' ' + req.user.lastName,
       title: req.body.title,
-      review: req.body.review
+      review: req.body.review,
+      rating: req.body.rating
     });
     user.save(function(err, user) {
       res.send(user)

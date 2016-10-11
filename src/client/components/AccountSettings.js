@@ -18,7 +18,7 @@ export default class GeneralSettings extends React.Component {
       <div>
         <nav className="nav nav-inline settings-bar">
           <a className="nav-link" href="#">General</a>
-          <a className="nav-link" href="#">Link</a>
+          <a className="nav-link" href="/account/tasks">My Tasks</a>
           <a className="nav-link" href="#">Link</a>
           <a className="nav-link" href="#">Link</a>
           <a className="nav-link" href="#">Link</a>

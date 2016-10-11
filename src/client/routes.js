@@ -15,7 +15,7 @@ import VolunteerList     from './containers/VolunteerList';
 import ResultsFavorites  from './containers/ResultsFavorites';
 import AccountSettings   from './components/AccountSettings';
 import ChangedPassword   from './containers/ChangePassword';
-
+import ReviewTasks       from './containers/ReviewTasks';
 
 
 export default (
@@ -34,6 +34,7 @@ export default (
       <Route path="/user" component = { ProfileUser } />
       <Route path="/favorites" component = { ResultsFavorites } />
       <Route path="/account" component = { AccountSettings } />
+      <Route path="/account/tasks" component = { ReviewTasks } />
 
   </Router>
 );

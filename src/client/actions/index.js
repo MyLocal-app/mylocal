@@ -1,16 +1,16 @@
-import axios                                  from 'axios';
-import { browserHistory }                     from 'react-router';
-import helpers                                from './action_helpers';
-import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from '../constants';
-import { SEARCH_TERMS }                       from '../constants';
-import { EVENTBRITE_RESULTS }                 from '../constants';
-import { YELP_RESULTS }                       from '../constants';
-import { RESTAURANT }                         from '../constants';
-import { ADD_TASK_TOP, GET_TASKS }            from '../constants';
-import { ADD_SERVICE_TOP, GET_SERVICES }      from '../constants';
-import { FETCH_USER }                         from '../constants';
-import { GET_VOLUNTEERS }                     from '../constants';
-import { FAVORITES }                          from '../constants';
+import axios                                        from 'axios';
+import { browserHistory }                           from 'react-router';
+import helpers                                      from './action_helpers';
+import { AUTH_USER, AUTH_ERROR, UNAUTH_USER }       from '../constants';
+import { SEARCH_TERMS }                             from '../constants';
+import { EVENTBRITE_RESULTS }                       from '../constants';
+import { YELP_RESULTS }                             from '../constants';
+import { RESTAURANT }                               from '../constants';
+import { ADD_TASK_TOP, GET_TASKS, GET_USER_TASKS }  from '../constants';
+import { ADD_SERVICE_TOP, GET_SERVICES }            from '../constants';
+import { FETCH_USER }                               from '../constants';
+import { GET_VOLUNTEERS }                           from '../constants';
+import { FAVORITES }                                from '../constants';
 
 // action submits email, pw to the server
 // if success, update state of app to authenticated
@@ -182,6 +182,22 @@ export function getTasks(query, coordinates) {
   };
 }
 
+export function getUserTasks() {
+  const header = {
+    headers: {
+      authorization: localStorage.getItem('token')
+    }
+  };
+  return function(dispatch) {
+    axios.get("/api/getUserTasks", header)
+    .then(response =>{
+      console.log(response.data)
+      dispatch({ type: GET_USER_TASKS, payload: response.data.reverse() });
+    })
+    .catch(error => console.log(error));
+  };
+}
+
 export function doTask(taskID, coordinates) {
   const header = {
     headers: {
@@ -192,6 +208,21 @@ export function doTask(taskID, coordinates) {
     axios.post('/api/doTask', {taskId: taskID, longitude : coordinates[0], latitude: coordinates[1]}, header)
     .then(response =>{
       dispatch({type: GET_TASKS, payload: response.data.reverse() })
+    })
+    .catch(error => console.log(error));
+  }
+}
+
+export function reviewTask(title, review, rating, servicePerson) {
+  const header = {
+    headers: {
+      authorization: localStorage.getItem('token')
+    }
+  };
+  return function(dispatch){
+    axios.post('/api/addReview', {title: title, review: review, rating: rating, servicePerson: servicePerson}, header)
+    .then(response =>{
+      //???
     })
     .catch(error => console.log(error));
   }
