@@ -66,7 +66,7 @@ exports.changepassword = function(req, res, done) {
       user.password = newPassword;
       user.save(function(err) {
         if (err) return next(err);
-        res.json({success: 'password has been changed' });
+        res.json({firstName: user.firstName, lastName: user.lastName});
       });
     });
 };

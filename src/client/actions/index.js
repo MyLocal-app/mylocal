@@ -72,7 +72,8 @@ export function changePassword({ oldPassword, newPassword }){
   return function(dispatch) {
     axios.post('/changepassword', { oldPassword, newPassword }, header)
     .then(response => {
-      dispatch({ type: AUTH_USER });
+      console.log(response.data)
+      dispatch({ type: AUTH_USER, payload: response.data.firstName + ' ' + response.data.lastName });
       browserHistory.push('/');
     })
     .catch(() => {
