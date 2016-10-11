@@ -71,6 +71,7 @@ exports.changepassword = function(req, res, done) {
     });
 };
 
+// user profile for public viewing
 exports.fetchUser = function(req, res) {
   User.findOne({ email: req.body.email }, function(err, user) {
     if (err) res.send(err);

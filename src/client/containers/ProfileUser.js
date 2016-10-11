@@ -1,11 +1,12 @@
- import React from 'react';
- import { connect } from 'react-redux'; 
- import { fetchUser } from '../actions'
+ import React             from 'react';
+ import { connect }       from 'react-redux'; 
+ import { fetchUser }     from '../actions'
+ import ProfileUserReview from '../components/ProfileUserReview'
 
  class UserProfile extends React.Component {
 
   componentWillMount() {
-    this.props.fetchUser('eric@shor.com') //placeholder, we need to render this dynamically
+    this.props.fetchUser('eric@shor.com')
   }
 
   render() {
@@ -102,26 +103,10 @@
               <hr />
               { this.props.user.reviews ? ( this.props.user.reviews.map((review, key) => {
                 return (
-                  <div className="row" key={key} >
-                    <div className="col-lg-2 col-md-3 col-sm-3 col-xs-4">
-                      <img src="http://placehold.it/80x80" alt="" className="img-fluid" />
-                    </div>
-                    <div className="col-xl-6 col-lg-10 col-md-9 col-sm-9 col-xs-8">
-                      <h5>{review.title}</h5>
-                      <i className="material-icons star-rating star-sm star-on">star</i>
-                      <i className="material-icons star-rating star-sm star-on">star</i>
-                      <i className="material-icons star-rating star-sm star-on">star</i>
-                      <i className="material-icons star-rating star-sm star-on">star</i>
-                      <i className="material-icons star-rating star-sm star-on">star</i>
-                      <div >
-                        <p>{ review.review }</p> 
-                      </div>
-                    </div>
-                  </div>
+                  <ProfileUserReview review={ review } key={ key } />
                 )
               }) ) : (<div></div>) }
             </div>
-            {console.log("reviews", this.props.user)}
           </div>
         </div>   
       </div>
