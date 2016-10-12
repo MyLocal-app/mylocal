@@ -98,7 +98,7 @@ class GeneralSettings extends React.Component {
         <nav className="nav nav-inline settings-bar">
           <a className="nav-link" href="#">General Settings</a>
           <a className="nav-link" href="/account/tasks">My Tasks</a>
-          <a className="nav-link" href={ `/user/${ this.state.email }` }>Public Probile</a>
+          <a className="nav-link" href={ `/user/${ this.state.email }` }>Public Profile</a>
           <a className="nav-link" href="#">Link</a>
           <a className="nav-link" href="#">Link</a>
         </nav>
