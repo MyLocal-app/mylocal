@@ -32,7 +32,7 @@ export default class ReviewTask extends Component {
   render(){
     return (
       <span>
-        <a onClick={this.openModal}><button style={{ width: '100%' }} className="btn btn-info btn-main-custom">Review Task</button></a>
+        <a onClick={this.openModal}><button style={{ width: '100%', marginTop: "20px" }} className="btn btn-info">Review Task</button></a>
         <Modal
           isOpen={ this.state.modalIsOpen }
           onAfterOpen={ this.afterOpenModal }

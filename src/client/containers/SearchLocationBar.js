@@ -69,7 +69,7 @@ class SearchLocationBar extends React.Component {
           required
         />
         <div style={{ 'marginTop':'10px' }}></div>
-        <button className="btn btn-outline-info btn-lg btn-main-custom">Submit</button>
+        <button className="btn btn-info">Submit</button>
         { !this.state.results.length ? '' : this.state.results.map((restaurant) => {
             return (<div>{ restaurant.name }</div>)
           })

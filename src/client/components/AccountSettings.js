@@ -111,10 +111,10 @@ class GeneralSettings extends React.Component {
             <hr />
             <div className="row">
               <div className="col-md-3">
-                <input type="text" style={{ "borderRadius":"5px", "border":"1px solid #ddd", "outline":"none", "width":"100%", "marginTop":"10px", "padding":"7px" }} placeholder="First Name.." value={ this.state.firstName } onChange={this.onFirstNameChange.bind(this)} />
+                <input type="text" className="settings-width form-field" placeholder="First Name.." value={ this.state.firstName } onChange={this.onFirstNameChange.bind(this)} />
               </div>
               <div className="col-md-3">
-                <input type="text" style={{ "borderRadius":"5px", "border":"1px solid #ddd", "outline":"none", "width":"100%", "marginTop":"10px", "padding":"7px" }} placeholder="Last Name.." value={ this.state.lastName } onChange={this.onLastNameChange.bind(this)} />
+                <input type="text" className="settings-width form-field" placeholder="Last Name.." value={ this.state.lastName } onChange={this.onLastNameChange.bind(this)} />
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ class GeneralSettings extends React.Component {
             <h4 className="settings-subtitle">Address</h4>
             <hr />
             <Autocomplete
-              style={{ "borderRadius":"5px", "border":"1px solid #ddd", "outline":"none", "width":"280px", "marginTop":"10px", "padding":"7px" }}
+              className="settings-width form-field"
               value={ this.state.address }
               onChange={this.onAddressChange.bind(this)}
               onPlaceSelected={ this.onLocationChange.bind(this)}
@@ -141,7 +141,7 @@ class GeneralSettings extends React.Component {
             <input
               type="file"
               id="inputFileToLoad"
-              style={{ 'borderRadius': '5px', 'display': 'block', 'width': '280px', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'backgroundColor': 'white' }}
+              className="settings-width form-field"
               placeholder="Upload image.."
               onChange={ this.onFileChange.bind(this) }
             />
@@ -149,10 +149,10 @@ class GeneralSettings extends React.Component {
           <div className="settings-panel">
             <h4 className="settings-subtitle">Description</h4>
             <hr />
-            <textarea style={{ "borderRadius":"5px", "border":"1px solid #ddd", "outline":"none", "width":"280px", "padding":"7px" }} placeholder="Description.." rows="5" value={ this.state.description } onChange={this.onDescriptionChange.bind(this)}></textarea>
+            <textarea className="settings-width form-field" placeholder="Description.." rows="5" value={ this.state.description } onChange={this.onDescriptionChange.bind(this)}></textarea>
           </div>
           <div className="settings-panel">
-            <button onClick={ this.applyChanges.bind(this) } style={{ 'width': '280px' }} className="btn btn-info btn-main-custom">Apply Changes and Signout</button>
+            <button onClick={ this.applyChanges.bind(this) }  className="btn btn-info">Apply Changes and Signout</button>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ class ResultsYelpItem extends Component {
           <div className="col-md-2">
             <img src={ !!this.props.restaurant.image_url ? this.props.restaurant.image_url : "http://resources.ennect.com/_images/application/event/no-selected-image-placeholder-large.gif" } alt="" className="img-fluid result-img" style={{ 'width': '100%' }} />
             <a href={ this.props.restaurant.url }>
-              <button style={{ 'width': '100%' }} className="btn btn-info btn-more-info">More</button>
+              <button style={{ 'width': '100%' }} className="btn btn-info mrgtop20">More</button>
             </a>
           </div>
           <div className="col-md-9">

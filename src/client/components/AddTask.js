@@ -36,11 +36,7 @@ export default class AddTask extends Component {
           isOpen={ this.state.modalIsOpen }
           onAfterOpen={ this.afterOpenModal }
           onRequestClose={ this.closeM2000 }
-          style={{
-            content: {
-              top: "100px",
-              color: "black"
-            }
+          style={{ content: { top: "100px", color: "black" }
           }}>
           <h2 className="addTask" style={{color: '#00a4d3'}}>Add Task</h2>
           <hr />

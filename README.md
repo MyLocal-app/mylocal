@@ -29,26 +29,26 @@
 
 - Node 6.5.x
 - MongoDB 3.2+
-- Jenkins 2.19
 
 ## Development
 This is a React/Redux app with a Node/Express server and a MongoDB database. The project has been set up to run tests with Mocha, Chai-JQuery, and React Test Utilities so we can live our TDD dreams. 
 
 ### Installing Dependencies
-To start, you need a .env file in the root directory with PORT, DBPATH and SECRET variables.
+npm install
 
 ### Tasks
 From within the root directory:
-```sh
-npm install 
-webpack --watch
-grunt local
-npm run test:watch
-```
-#### Task Descriptions
-- The webpack --watch command will constantly rebuild only the changed parts of the project
-- The grunt local command will run your dev server on localhost:3000
-- The npm run test:watch command will run your test every time it detects a change in the filesystem. You may want to turn off webpack watch.
+- The **webpack --watch** command will constantly rebuild only the changed parts of the project
+- The **grunt local** command will run your dev server on localhost:3000
+- The **npm run test:watch** command will run your test every time it detects a change in the filesystem. You may want to turn off webpack watch.
+
+Note that to start the server, you need a .env file in the root directory with PORT, DBPATH and SECRET variables like so:
+
+PORT = 3000
+
+DBPATH = 'mongodb://username:password@somehostedmongodbinstance'
+
+SECRET = YOUR_SECRET_STRING_HERE
 
 ### File Structure
 There are two files that matter for development in root: /src and /test. An exhaustive listing of the entire file structure can be found in Dir_Struct.md
@@ -95,5 +95,4 @@ See CONTRIBUTING.md for contribution guidelines, or if you're feeling bold:
 2. Create your feature branch: git checkout -b my-new-feature
 3. Commit your changes: git commit -am 'Add some feature'
 4. Push to the branch: git push origin my-new-feature
-5. Submit a pull request :D
-
+5. Submit a pull request
