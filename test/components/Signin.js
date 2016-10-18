@@ -4,12 +4,12 @@ import Signin                      from '../../src/client/containers/Signin';
 describe('Sign In Page', () => {
   const signin = renderComponent(Signin)
   it('has input boxes', () => {
-    expect(signin.find(".email")).to.exist    
-    expect(signin.find(".password")).to.exist
+    expect(signin.find(".sign")).to.exist    
+    expect(signin.find(".form-field")).to.exist
   })
   it('has submit button', () => {
     expect(signin.find(".btn")).to.exist    
-    expect(signin.find(".btn-primary")).to.exist
+    expect(signin.find(".btn-info")).to.exist
   })
   describe('Logging in', () => {
     before(() => {

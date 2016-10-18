@@ -28,10 +28,10 @@ class Signin extends Component {
             <hr />
             <form onSubmit={ handleSubmit(this.onFormSubmit.bind(this)) } >
               <div className="form-group">
-                <input { ...email } type="text" className="sign form-field" placeholder="Email.." required />
+                <input { ...email } type="text" className="sign form-field email" placeholder="Email.." required />
               </div>
               <div className="form-group">
-                <input { ...password } type="password"  className="sign form-field" placeholder="Password.." required />
+                <input { ...password } type="password"  className="sign form-field password" placeholder="Password.." required />
               </div>
               {this.renderAlert()}
               <button action="submit" className="btn btn-info">Sign in</button>
