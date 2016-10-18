@@ -41,7 +41,7 @@ class ServiceList extends Component {
                 <div className="col-md-3">
                   <img src="/img/signup.jpg" alt="" className="result-img img-fluid" />
                   <a href={'mailto:' + serviceData.ownerEmail}>
-                  <button style={{ width: '100%' }} className="btn btn-info btn-main-custom">Send Email</button>
+                  <button style={{ width: '100%' }} className="btn btn-info mrgtop20">Send Email</button>
                   </a>
                 </div>
                 <div className="col-md-9">

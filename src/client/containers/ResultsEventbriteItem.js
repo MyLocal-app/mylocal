@@ -29,7 +29,7 @@ class ResultsEventbriteItem extends Component {
           <div className="col-xl-3 col-lg-4">
             <img src={ !!this.props.eventData.logo ? this.props.eventData.logo.url : "http://resources.ennect.com/_images/application/event/no-selected-image-placeholder-large.gif" } alt="" className="result-img img-fluid" style={{ width: '100%'}} />
             <a href={ this.props.eventData.url }>
-              <button style={{ width: '100%' }} className="btn btn-info btn-more-info">More Info</button>
+              <button style={{ width: '100%' }} className="btn btn-info mrgtop20">More Info</button>
             </a>
           </div>
           <div className="col-xl-8 col-lg-7">

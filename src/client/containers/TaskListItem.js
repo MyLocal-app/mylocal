@@ -15,7 +15,7 @@ export default class TaskListItem extends React.Component {
           <div className="col-md-3">
             <GoogleMap lon={lng} lat={lat} />
             <a href={'mailto:'+this.props.task.owner}>
-            <button style={{ width: '100%' }} className="btn btn-info btn-main-custom">Send Email</button>
+            <button style={{ width: '100%' }} className="btn btn-info mrgtop20">Send Email</button>
             </a>
           </div>
           <div className="col-md-9">

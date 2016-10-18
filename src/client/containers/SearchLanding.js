@@ -42,7 +42,7 @@ class SearchLanding extends React.Component {
           <option value="skilled tasker">Skilled Tasker</option>
         </select>
         <div></div>
-        <button className="btn btn-outline-info btn-main-custom">Next</button>
+        <button className="btn btn-info mrgtop20">Next</button>
       </form>
     );
   }

@@ -14,7 +14,7 @@ class Signout extends Component {
       <div className="main-bg-text">
         <h2 className="main-bg-text-hero-blue">We Find, You Choose</h2>
         <h3 >Good Bye! Have a nice day...</h3>
-        <h4> Come back soon!</h4>
+        <h4>Come back soon!</h4>
       </div>
       </div>
     )

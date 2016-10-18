@@ -1,3 +1,28 @@
+/*inline style cleanup*/
+
+.form-field {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: block;
+  outline: none;
+  padding: 7px;
+  margin-top: 10px;
+}
+
+.sign {
+  width: 100%;
+}
+
+.pass {
+  width: 250px;
+}
+
+.settings-width {
+  width: 300px;
+}
+
+/*end cleanup*/
+
 body {
   background-color: #fafafa !important;
 }
@@ -70,6 +95,10 @@ header {
   padding: 0 !important;
 }
 
+.mrgtop20 {
+  margin-top: 20px
+}
+
 .searchInfoMain {
   position: relative;
   text-align: center;
@@ -79,9 +108,7 @@ header {
 }
 
 .btn-main-custom {
-  padding: 13px 60px !important;
-  outline: none !important;
-  margin-top: 20px;
+
 }
 
 .howItWorks {
@@ -308,11 +335,6 @@ label {
   color: #00a4d3
 }
 
-.btn-more-info {
-  outline: none !important;
-  margin-top: 20px;
-}
-
 td {
   padding-right: 1em;
 }
@@ -350,10 +372,6 @@ td {
   margin-top: 50px;
   padding: 0 30px;
   font-family: 'Josefin Sans', sans-serif;
-}
-
-.settings-subtitle {
-
 }
 
 @media (max-width: 544px) {

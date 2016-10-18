@@ -89,20 +89,20 @@ class Signup extends React.Component {
           <hr />
           <form onSubmit={ this.onFormSubmit.bind(this) } style={{ 'marginTop': '20px' }} encType="multipart/form-data">
             <div className="form-group">
-              <input type="text" style={{ 'borderRadius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="First Name.." required  onChange={ this.onFirstNameChange.bind(this) } />
+              <input type="text" className="sign form-field" placeholder="First Name.." required  onChange={ this.onFirstNameChange.bind(this) } />
             </div>
             <div className="form-group">
-              <input type="text" style={{ 'borderRadius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Last Name.." required  onChange={ this.onLastNameChange.bind(this) } />
+              <input type="text" className="sign form-field" placeholder="Last Name.." required  onChange={ this.onLastNameChange.bind(this) } />
             </div>
             <div className="form-group">
-              <input type="email" style={{ 'borderRadius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Email.." required  onChange={ this.onEmailChange.bind(this) } />
+              <input type="email" className="sign form-field" placeholder="Email.." required  onChange={ this.onEmailChange.bind(this) } />
             </div>
             <div className="form-group">
-              <input type="password" style={{ 'borderRadius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }} placeholder="Password.." required  onChange={ this.onPasswordChange.bind(this) } />
+              <input type="password" className="sign form-field" placeholder="Password.." required  onChange={ this.onPasswordChange.bind(this) } />
             </div>
             <div className="form-group">
               <Autocomplete
-                style={{ 'borderRadius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }}
+                className="sign form-field"
                 type="text"
                 types={ ['address'] }
                 placeholder="Street Address.."
@@ -116,13 +116,13 @@ class Signup extends React.Component {
               <input
                 type="file"
                 id="inputFileToLoad"
-                style={{ 'borderRadius': '5px', 'display': 'block', 'width': '100%', 'border': '1px solid #ddd', 'outline': 'none', 'padding': '7px', 'margin': '0 auto' }}
+                className="sign form-field"
                 placeholder="Upload image.."
                 onChange={ this.onFileChange.bind(this) }
               />
             </div>
-            <button action="submit" style={{ 'borderRadius': '5px', 'marginTop': '5px', 'width': '100%', 'border': 'none', 'outline': 'none', 'padding': '16px', 'backgroundColor': 'lightgreen', 'color': 'white', 'fontSize': '20px' }}>Submit</button>
-            <div style={{ 'marginTop': '15px' }}><Link to="signin" style={{ 'textDecoration': 'none' }}>Already have an account? <strong>Sign in</strong>...</Link></div>
+            <button action="submit" className="btn btn-info">Submit</button>
+            <div style={{ 'marginTop': '15px' }}><Link to="signin">Already have an account? <strong>Sign in</strong>...</Link></div>
           </form>
         </div>
       </div>

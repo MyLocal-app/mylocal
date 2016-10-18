@@ -28,7 +28,7 @@ class ReviewTasks extends Component {
     return (
       <div>
       <nav className="nav nav-inline settings-bar">
-        <a className="nav-link" href="#">General Settings</a>
+        <a className="nav-link" href="/account">General Settings</a>
         <a className="nav-link" href="/account/tasks">My Tasks</a>
         <a className="nav-link" href={ `/user/${ this.state.email }` }>Public Profile</a>
       </nav>
